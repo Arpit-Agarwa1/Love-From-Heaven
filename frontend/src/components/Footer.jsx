@@ -17,12 +17,10 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_1fr] lg:gap-10">
           <div>
-            <div className="inline-flex items-center justify-center rounded-full bg-white p-3 shadow-soft-lg ring-1 ring-heaven-cocoa/[0.06] sm:p-3.5">
-              <BrandLogo
-                className="h-24 w-24 object-contain sm:h-32 sm:w-32 lg:h-36 lg:w-36"
-                alt="Love From Heaven home bakery"
-              />
-            </div>
+            <BrandLogo
+              className="h-24 w-24 object-contain sm:h-32 sm:w-32 lg:h-36 lg:w-36"
+              alt="Love From Heaven home bakery"
+            />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-heaven-cocoa/65">
               Specialty home bakery — custom cakes, cookies, and celebrations. Baked with care for your table.
             </p>

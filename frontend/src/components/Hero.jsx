@@ -42,10 +42,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="motion-safe-fade flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10 lg:gap-14">
-          <div
-            className="flex shrink-0 items-center justify-center self-start rounded-3xl bg-white/92 p-4 shadow-soft-lg ring-1 ring-heaven-cocoa/[0.07] backdrop-blur-md sm:p-5"
-            aria-hidden="true"
-          >
+          <div className="flex shrink-0 self-start" aria-hidden="true">
             <BrandLogo
               className="h-24 w-24 object-contain sm:h-28 sm:w-28 lg:h-32 lg:w-32"
               loading="eager"

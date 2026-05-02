@@ -61,7 +61,7 @@ export function Header() {
         <Link
           to="/"
           aria-label="Love From Heaven home bakery — home"
-          className="group flex shrink-0 items-center justify-center rounded-full bg-white p-2 shadow-soft ring-1 ring-heaven-cocoa/[0.07] transition-shadow duration-200 ease-out hover:shadow-soft-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:p-2.5"
+          className="flex shrink-0 items-center justify-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose"
         >
           <BrandLogo
             className="h-14 w-14 object-contain sm:h-16 sm:w-16 lg:h-[4.5rem] lg:w-[4.5rem]"
