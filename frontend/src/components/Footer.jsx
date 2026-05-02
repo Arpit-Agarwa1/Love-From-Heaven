@@ -7,11 +7,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div>
-            <BrandLogo
-              className="h-24 w-24 object-contain sm:h-28 sm:w-28"
-              alt="Love From Heaven home bakery"
-            />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-heaven-cocoa/65">
+            <div className="inline-flex items-center justify-center rounded-full bg-white p-3 shadow-[0_1px_2px_rgba(61,50,41,0.05),0_8px_24px_-6px_rgba(61,50,41,0.1)] ring-1 ring-heaven-cocoa/[0.07] sm:p-3.5">
+              <BrandLogo
+                className="h-28 w-28 object-contain sm:h-36 sm:w-36 lg:h-40 lg:w-40"
+                alt="Love From Heaven home bakery"
+              />
+            </div>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-heaven-cocoa/65">
               Custom orders, celebrations, and corporate gifting. Replace the contact details below with your channels when you go live.
             </p>
           </div>
