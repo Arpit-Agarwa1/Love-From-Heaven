@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 /**
  * Featured product grid with loading skeletons and accessible states.
  *
@@ -26,7 +28,15 @@ export function FeaturedTreats({ items, loading, error }) {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-heaven-rose">Signature offerings</p>
         <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-heaven-cocoa sm:text-4xl">Featured menu</h2>
         <p className="mt-4 text-base leading-relaxed text-heaven-cocoa/68">
-          A curated selection of customer favorites. For custom flavors, dietary accommodations, or large events, please reach out through the contact section.
+          A curated selection of customer favorites. See real bakes in the{' '}
+          <Link to="/gallery" className="font-semibold text-heaven-rose underline decoration-heaven-mist underline-offset-4 hover:decoration-heaven-rose/40">
+            gallery
+          </Link>
+          . For custom flavors, dietary accommodations, or large events, reach us on the{' '}
+          <Link to="/contact" className="font-semibold text-heaven-rose underline decoration-heaven-mist underline-offset-4 hover:decoration-heaven-rose/40">
+            contact page
+          </Link>
+          .
         </p>
       </div>
 

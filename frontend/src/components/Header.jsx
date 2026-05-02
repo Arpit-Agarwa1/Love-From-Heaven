@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { BrandLogo } from './BrandLogo.jsx';
 
-/** Top bar: wordmark and navigation with mobile menu. */
+/** Top bar: logo, navigation (including Our Story), and mobile menu. */
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,26 +22,43 @@ export function Header() {
   const linkClass =
     'text-sm font-medium text-heaven-cocoa/85 transition-colors hover:text-heaven-rose focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose rounded-sm';
 
+  const pageNavLinkClass = ({ isActive }) =>
+    [linkClass, isActive ? 'text-heaven-rose' : ''].filter(Boolean).join(' ');
+
   const navItems = (
     <>
-      <a href="#treats" className={linkClass} onClick={() => setMenuOpen(false)}>
+      <Link
+        to={{ pathname: '/', hash: 'treats' }}
+        className={linkClass}
+        onClick={() => setMenuOpen(false)}
+      >
         Menu
-      </a>
-      <a href="#order" className={linkClass} onClick={() => setMenuOpen(false)}>
+      </Link>
+      <Link
+        to={{ pathname: '/', hash: 'order' }}
+        className={linkClass}
+        onClick={() => setMenuOpen(false)}
+      >
         Order
-      </a>
-      <a href="#contact" className={linkClass} onClick={() => setMenuOpen(false)}>
+      </Link>
+      <NavLink to="/gallery" className={pageNavLinkClass} onClick={() => setMenuOpen(false)} end>
+        Gallery
+      </NavLink>
+      <NavLink to="/our-story" className={pageNavLinkClass} onClick={() => setMenuOpen(false)} end>
+        Our story
+      </NavLink>
+      <NavLink to="/contact" className={pageNavLinkClass} onClick={() => setMenuOpen(false)} end>
         Contact
-      </a>
+      </NavLink>
     </>
   );
 
   return (
     <header className="sticky top-0 z-50 border-b border-heaven-mist/80 bg-heaven-cream/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-4 py-4 sm:gap-6 sm:px-6 sm:py-4 lg:px-8">
-        <a
-          href="#"
-          aria-label="Love From Heaven home bakery — top of page"
+        <Link
+          to="/"
+          aria-label="Love From Heaven home bakery — home"
           className="group flex shrink-0 items-center justify-center rounded-full bg-white p-2 shadow-[0_1px_2px_rgba(61,50,41,0.06),0_6px_16px_-4px_rgba(61,50,41,0.08)] ring-1 ring-heaven-cocoa/[0.08] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgba(61,50,41,0.08),0_10px_24px_-6px_rgba(61,50,41,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:p-2.5"
         >
           <BrandLogo
@@ -48,9 +66,9 @@ export function Header() {
             loading="eager"
             alt=""
           />
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-10 sm:flex" aria-label="Main">
+        <nav className="hidden items-center gap-8 lg:gap-10 sm:flex" aria-label="Main">
           {navItems}
         </nav>
 

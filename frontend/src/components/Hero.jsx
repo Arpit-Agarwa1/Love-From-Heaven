@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 /** Primary hero: positioning, value proposition, and calls to action. */
 export function Hero() {
   return (
@@ -21,12 +23,12 @@ export function Hero() {
           Love From Heaven is a specialty home bakery focused on custom cakes, cookies, and seasonal pastries. Every order is made with quality ingredients and careful attention to detail.
         </p>
         <div className="mt-10 flex flex-wrap gap-3 sm:gap-4" id="order">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-heaven-rose px-7 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-heaven-cocoa focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-cocoa sm:px-8 sm:py-3"
           >
             Request a quote
-          </a>
+          </Link>
           <a
             href="#treats"
             className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-heaven-cocoa/15 bg-white/70 px-7 py-2.5 text-sm font-semibold text-heaven-cocoa backdrop-blur-sm transition hover:border-heaven-gold/45 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:px-8 sm:py-3"
