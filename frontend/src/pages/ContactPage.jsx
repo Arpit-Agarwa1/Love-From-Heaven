@@ -31,7 +31,7 @@ export function ContactPage() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse 70% 45% at 50% -15%, rgba(202, 100, 144, 0.32), transparent), radial-gradient(ellipse 50% 35% at 100% 40%, rgba(201, 162, 39, 0.08), transparent)',
+            'radial-gradient(ellipse 70% 45% at 50% -15%, rgb(var(--lfh-brand-rgb) / 0.32), transparent), radial-gradient(ellipse 50% 35% at 100% 40%, rgba(201, 162, 39, 0.08), transparent)',
         }}
       />
       <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">

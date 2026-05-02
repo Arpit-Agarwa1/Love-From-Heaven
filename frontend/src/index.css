@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Global brand color — change `--lfh-brand` / `--lfh-brand-rgb` only; Tailwind `heaven-rose` and
+ * gradients that use `rgb(var(--lfh-brand-rgb) / …)` follow automatically.
+ */
+@layer base {
+  :root {
+    /* Hex + matching space-separated RGB (for `rgb(var(--lfh-brand-rgb) / opacity)`). Keep in sync when you change the brand. */
+    --lfh-brand: #ca6490;
+    --lfh-brand-rgb: 202 100 144;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

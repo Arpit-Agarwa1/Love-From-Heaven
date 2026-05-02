@@ -36,7 +36,7 @@ export function Hero() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse 85% 65% at 15% 45%, rgba(202, 100, 144, 0.3), transparent), radial-gradient(ellipse 55% 45% at 95% 15%, rgba(201, 162, 39, 0.1), transparent)',
+            'radial-gradient(ellipse 85% 65% at 15% 45%, rgb(var(--lfh-brand-rgb) / 0.3), transparent), radial-gradient(ellipse 55% 45% at 95% 15%, rgba(201, 162, 39, 0.1), transparent)',
         }}
       />
 

@@ -9,8 +9,8 @@ export default {
           cream: '#FFFBFA',
           /** Soft tint that pairs with brand rose */
           blush: '#F3E6ED',
-          /** Primary brand color */
-          rose: '#CA6490',
+          /** Primary brand — mirrors `src/index.css` `:root` `--lfh-brand-rgb` */
+          rose: 'rgb(var(--lfh-brand-rgb) / <alpha-value>)',
           gold: '#C9A227',
           cocoa: '#3D3229',
           /** Cool-neutral with a hint of pink */
