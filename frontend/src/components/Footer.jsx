@@ -18,7 +18,7 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_1fr] lg:gap-10">
           <div>
             <BrandLogo
-              className="h-24 w-24 object-contain sm:h-32 sm:w-32 lg:h-36 lg:w-36"
+              className="h-28 w-auto max-h-40 max-w-[min(17rem,78vw)] object-contain sm:h-32 sm:max-h-44 lg:h-36 lg:max-w-[19rem]"
               alt="Love From Heaven home bakery"
             />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-heaven-cocoa/65">

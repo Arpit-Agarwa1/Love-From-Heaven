@@ -44,7 +44,7 @@ export function Hero() {
         <div className="motion-safe-fade flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10 lg:gap-14">
           <div className="flex shrink-0 self-start" aria-hidden="true">
             <BrandLogo
-              className="h-24 w-24 object-contain sm:h-28 sm:w-28 lg:h-32 lg:w-32"
+              className="h-28 w-auto max-h-36 max-w-[min(19rem,90vw)] object-contain sm:h-32 sm:max-h-40 lg:h-36 lg:max-w-[22rem]"
               loading="eager"
               alt=""
             />

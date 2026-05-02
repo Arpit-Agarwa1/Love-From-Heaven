@@ -8,8 +8,10 @@ import { useState } from 'react';
 const LOGO_SOURCES = ['/brand-logo.png', '/logo.png', '/logo.svg', '/logo.jpg', '/logo.webp', '/favicon.svg'];
 
 /**
+ * Raster logos: prefer `h-* w-auto max-w-* object-contain` so wide marks sit naturally without a square crop.
+ *
  * @param {object} props
- * @param {string} [props.className] — Tailwind / CSS classes for sizing (e.g. h-10 w-auto).
+ * @param {string} [props.className] — Tailwind / CSS classes for sizing (e.g. `h-12 w-auto max-w-[12rem] object-contain`).
  * @param {string} [props.loading] — Passed to `<img>`.
  * @param {string} [props.alt] — Empty when a parent link provides `aria-label`.
  */

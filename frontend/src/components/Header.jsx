@@ -64,8 +64,9 @@ export function Header() {
           className="flex shrink-0 items-center justify-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose"
         >
           <BrandLogo
-            className="h-14 w-14 object-contain sm:h-16 sm:w-16 lg:h-[4.5rem] lg:w-[4.5rem]"
+            className="h-11 w-auto max-h-[4.5rem] max-w-[min(12rem,46vw)] object-contain sm:h-14 sm:max-h-[4.75rem] sm:max-w-[14rem] lg:h-[4.25rem] lg:max-w-[15rem]"
             loading="eager"
+            fetchPriority="high"
             alt=""
           />
         </Link>
