@@ -1,0 +1,33 @@
+import { useState } from 'react';
+
+/**
+ * Tries common filenames under `public/` so you can drop in a provided mark without changing code.
+ * Falls back to the existing favicon if none match.
+ */
+const LOGO_SOURCES = ['/logo.png', '/logo.svg', '/logo.jpg', '/logo.webp', '/favicon.svg'];
+
+/**
+ * @param {object} props
+ * @param {string} [props.className] — Tailwind / CSS classes for sizing (e.g. h-10 w-auto).
+ * @param {string} [props.loading] — Passed to `<img>`.
+ * @param {string} [props.alt] — Empty when a parent link provides `aria-label`.
+ */
+export function BrandLogo({ className = '', loading = 'lazy', alt = '', ...rest }) {
+  const [index, setIndex] = useState(0);
+  const safeIndex = Math.min(index, LOGO_SOURCES.length - 1);
+  const src = LOGO_SOURCES[safeIndex];
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading={loading}
+      decoding="async"
+      className={className}
+      onError={() =>
+        setIndex((i) => (i < LOGO_SOURCES.length - 1 ? i + 1 : i))
+      }
+      {...rest}
+    />
+  );
+}

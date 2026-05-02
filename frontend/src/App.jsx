@@ -20,15 +20,15 @@ function App() {
       setError(null);
       try {
         const res = await fetch('/api/products/featured');
-        if (!res.ok) throw new Error('The menu did not load.');
+        if (!res.ok) throw new Error('The menu could not be loaded.');
         const data = await res.json();
         if (!cancelled) setTreats(data.data ?? []);
       } catch (e) {
         const raw = e?.message ?? '';
         const friendly =
           raw === 'Failed to fetch'
-            ? 'Could not reach the backend. Make sure it is running (see the tip below).'
-            : raw || 'Something went wrong. Please try again.';
+            ? 'Unable to reach the server. Confirm the API is running (see the note on this page).'
+            : raw || 'An unexpected error occurred. Please try again.';
         if (!cancelled) setError(friendly);
       } finally {
         if (!cancelled) setLoading(false);

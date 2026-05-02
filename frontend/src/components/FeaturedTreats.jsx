@@ -1,34 +1,55 @@
 /**
- * Shows the treat cards. Props:
- * - items: list of treats from the server
- * - loading: true while we are still waiting for data
- * - error: error message string, or null if all is fine
+ * Featured product grid with loading skeletons and accessible states.
+ *
+ * @param {{ id: string, name: string, description: string, priceLabel: string }[]} items
+ * @param {boolean} loading
+ * @param {string | null} error
  */
+function TreatCardSkeleton() {
+  return (
+    <li className="flex flex-col rounded-2xl border border-heaven-mist bg-white/60 p-6 shadow-sm">
+      <div className="h-6 w-3/5 animate-pulse rounded bg-heaven-mist" />
+      <div className="mt-3 space-y-2 flex-1">
+        <div className="h-3 w-full animate-pulse rounded bg-heaven-mist/90" />
+        <div className="h-3 w-11/12 animate-pulse rounded bg-heaven-mist/90" />
+        <div className="h-3 w-2/3 animate-pulse rounded bg-heaven-mist/90" />
+      </div>
+      <div className="mt-5 h-4 w-16 animate-pulse rounded bg-heaven-blush" />
+    </li>
+  );
+}
+
 export function FeaturedTreats({ items, loading, error }) {
   return (
-    <section id="treats" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section id="treats" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="max-w-2xl">
-        <h2 className="font-display text-3xl font-semibold text-heaven-cocoa sm:text-4xl">Featured treats</h2>
-        <p className="mt-3 text-heaven-cocoa/70">
-          A few things we love to bake. Message us if you want something special for a party or holiday.
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-heaven-rose">Signature offerings</p>
+        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-heaven-cocoa sm:text-4xl">Featured menu</h2>
+        <p className="mt-4 text-base leading-relaxed text-heaven-cocoa/68">
+          A curated selection of customer favorites. For custom flavors, dietary accommodations, or large events, please reach out through the contact section.
         </p>
       </div>
 
       {loading && (
-        <p className="mt-10 text-sm text-heaven-cocoa/60" role="status">
-          Loading treats…
-        </p>
+        <ul className="mt-12 grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true" aria-label="Loading menu">
+          {[0, 1, 2].map((i) => (
+            <TreatCardSkeleton key={i} />
+          ))}
+        </ul>
       )}
 
       {error && !loading && (
-        <p className="mt-10 rounded-lg border border-heaven-rose/30 bg-heaven-blush/50 px-4 py-3 text-sm text-heaven-cocoa" role="alert">
-          <span className="block font-medium">Could not load treats.</span>
-          <span className="mt-2 block">{error}</span>
-          <span className="mt-2 block text-heaven-cocoa/80">
-            Tip: open a terminal, go to the <code className="rounded bg-white/80 px-1">backend</code> folder, and run{' '}
-            <code className="rounded bg-white/80 px-1">npm run dev</code>. That starts the small server the website talks to.
-          </span>
-        </p>
+        <div
+          className="mt-10 rounded-xl border border-heaven-rose/25 bg-white/60 px-5 py-4 shadow-sm backdrop-blur-sm"
+          role="alert"
+        >
+          <p className="text-sm font-semibold text-heaven-cocoa">Unable to load the menu</p>
+          <p className="mt-2 text-sm leading-relaxed text-heaven-cocoa/75">{error}</p>
+          <p className="mt-3 border-t border-heaven-mist/80 pt-3 text-xs leading-relaxed text-heaven-cocoa/65">
+            Developers: start the API from the <code className="rounded bg-heaven-cream px-1.5 py-0.5 font-mono text-[11px]">backend</code>{' '}
+            directory with <code className="rounded bg-heaven-cream px-1.5 py-0.5 font-mono text-[11px]">npm run dev</code> so this page can fetch featured products.
+          </p>
+        </div>
       )}
 
       {!loading && !error && (
@@ -36,11 +57,11 @@ export function FeaturedTreats({ items, loading, error }) {
           {items.map((item) => (
             <li
               key={item.id}
-              className="group flex flex-col rounded-2xl border border-heaven-mist bg-white/70 p-6 shadow-sm transition hover:border-heaven-gold/40 hover:shadow-md"
+              className="group flex flex-col rounded-2xl border border-heaven-mist bg-white/75 p-6 shadow-sm ring-0 transition hover:border-heaven-gold/35 hover:shadow-md"
             >
-              <h3 className="font-display text-xl font-semibold text-heaven-cocoa">{item.name}</h3>
-              <p className="mt-2 flex-1 text-sm text-heaven-cocoa/70">{item.description}</p>
-              <p className="mt-4 text-sm font-semibold text-heaven-rose">{item.priceLabel}</p>
+              <h3 className="font-display text-xl font-semibold tracking-tight text-heaven-cocoa">{item.name}</h3>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-heaven-cocoa/68">{item.description}</p>
+              <p className="mt-5 border-t border-heaven-mist/90 pt-4 text-sm font-semibold tabular-nums text-heaven-rose">{item.priceLabel}</p>
             </li>
           ))}
         </ul>
