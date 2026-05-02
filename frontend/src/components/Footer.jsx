@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import { BrandLogo } from './BrandLogo.jsx';
-import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '../constants/contact.js';
+import {
+  CONTACT_EMAIL,
+  CONTACT_INSTAGRAM_URL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_E164,
+} from '../constants/contact.js';
 
 /** Site footer: brand, contact channels, and legal line. */
 export function Footer() {
@@ -31,6 +36,12 @@ export function Footer() {
               >
                 Gallery
               </Link>
+              <Link
+                to="/menu"
+                className="font-semibold text-heaven-rose underline decoration-heaven-mist underline-offset-4 transition hover:text-heaven-cocoa hover:decoration-heaven-rose/40"
+              >
+                Menu 2026
+              </Link>
             </p>
           </div>
           <div>
@@ -49,7 +60,16 @@ export function Footer() {
               </div>
               <div>
                 <dt className="font-medium text-heaven-cocoa">Instagram</dt>
-                <dd className="mt-0.5">@lovefromheaven</dd>
+                <dd className="mt-0.5">
+                  <a
+                    href={CONTACT_INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-heaven-mist underline-offset-4 transition hover:text-heaven-rose hover:decoration-heaven-rose/40"
+                  >
+                    @lovefromheaven.lfh
+                  </a>
+                </dd>
               </div>
               <div>
                 <dt className="font-medium text-heaven-cocoa">Phone</dt>

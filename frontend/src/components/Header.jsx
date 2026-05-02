@@ -27,13 +27,9 @@ export function Header() {
 
   const navItems = (
     <>
-      <Link
-        to={{ pathname: '/', hash: 'treats' }}
-        className={linkClass}
-        onClick={() => setMenuOpen(false)}
-      >
+      <NavLink to="/menu" className={pageNavLinkClass} onClick={() => setMenuOpen(false)} end>
         Menu
-      </Link>
+      </NavLink>
       <Link
         to={{ pathname: '/', hash: 'order' }}
         className={linkClass}

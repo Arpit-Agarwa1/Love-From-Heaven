@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '../constants/contact.js';
+import {
+  CONTACT_EMAIL,
+  CONTACT_INSTAGRAM_URL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_E164,
+} from '../constants/contact.js';
 
 /** Dedicated contact page: phone, email, and quick links for quotes and orders. */
 export function ContactPage() {
@@ -26,7 +31,7 @@ export function ContactPage() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse 70% 45% at 50% -15%, rgba(183, 110, 121, 0.2), transparent), radial-gradient(ellipse 50% 35% at 100% 40%, rgba(201, 162, 39, 0.08), transparent)',
+            'radial-gradient(ellipse 70% 45% at 50% -15%, rgba(241, 162, 187, 0.32), transparent), radial-gradient(ellipse 50% 35% at 100% 40%, rgba(201, 162, 39, 0.08), transparent)',
         }}
       />
       <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
@@ -60,6 +65,18 @@ export function ContactPage() {
               {CONTACT_EMAIL}
             </a>
             <p className="mt-2 text-sm text-heaven-cocoa/60">We reply as soon as we can</p>
+          </li>
+          <li className="rounded-2xl border border-heaven-mist/90 bg-white/80 p-6 shadow-sm backdrop-blur-sm sm:col-span-2 sm:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-heaven-cocoa/50">Instagram</p>
+            <a
+              href={CONTACT_INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 block text-base font-semibold text-heaven-cocoa underline decoration-heaven-mist underline-offset-4 transition hover:text-heaven-rose hover:decoration-heaven-rose/40 sm:text-lg"
+            >
+              @lovefromheaven.lfh
+            </a>
+            <p className="mt-2 text-sm text-heaven-cocoa/60">Follow for new bakes, behind the scenes, and order updates</p>
           </li>
         </ul>
 

@@ -5,12 +5,16 @@ export default {
     extend: {
       colors: {
         heaven: {
-          cream: '#FDF8F3',
-          blush: '#F5E6E0',
-          rose: '#B76E79',
+          /** Page canvas — warm near-white */
+          cream: '#FFFBFA',
+          /** Soft tint that pairs with pastel crimson */
+          blush: '#FCE8EE',
+          /** Brand accent — pastel crimson */
+          rose: '#f1a2bb',
           gold: '#C9A227',
           cocoa: '#3D3229',
-          mist: '#E8E4DF',
+          /** Cool-neutral with a hint of pink */
+          mist: '#EDE6EA',
         },
       },
       fontFamily: {

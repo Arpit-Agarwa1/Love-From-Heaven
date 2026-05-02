@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage.jsx';
 import { OurStoryPage } from './pages/OurStoryPage.jsx';
 import { ContactPage } from './pages/ContactPage.jsx';
 import { GalleryPage } from './pages/GalleryPage.jsx';
+import { MenuPage } from './pages/MenuPage.jsx';
 
 /** App shell: router, shared header/footer, and page routes. */
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/our-story" element={<OurStoryPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/menu" element={<MenuPage />} />
           </Routes>
         </main>
         <Footer />

@@ -5,7 +5,7 @@ import { GalleryTeaser } from '../components/GalleryTeaser.jsx';
 import { FeaturedTreats } from '../components/FeaturedTreats.jsx';
 
 /**
- * Landing page: hero, featured treats from API, and in-page anchors for nav (#treats, #order).
+ * Landing page: hero, featured treats from API, anchors (#treats, #order), and links to /menu.
  */
 export function HomePage() {
   const location = useLocation();

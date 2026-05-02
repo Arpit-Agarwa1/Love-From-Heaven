@@ -4,7 +4,8 @@ import { useState } from 'react';
  * Tries common filenames under `public/` so you can drop in a provided mark without changing code.
  * Falls back to the existing favicon if none match.
  */
-const LOGO_SOURCES = ['/logo.png', '/logo.svg', '/logo.jpg', '/logo.webp', '/favicon.svg'];
+/** Official mark from brand PDF (`public/brand-logo.png`); then optional overrides and fallbacks. */
+const LOGO_SOURCES = ['/brand-logo.png', '/logo.png', '/logo.svg', '/logo.jpg', '/logo.webp', '/favicon.svg'];
 
 /**
  * @param {object} props

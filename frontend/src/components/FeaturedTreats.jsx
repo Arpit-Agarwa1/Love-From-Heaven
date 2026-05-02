@@ -28,7 +28,11 @@ export function FeaturedTreats({ items, loading, error }) {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-heaven-rose">Signature offerings</p>
         <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-heaven-cocoa sm:text-4xl">Featured menu</h2>
         <p className="mt-4 text-base leading-relaxed text-heaven-cocoa/68">
-          A curated selection of customer favorites. See real bakes in the{' '}
+          A curated selection of customer favorites. For the full <strong className="font-semibold text-heaven-cocoa/80">2026 menu</strong>, see the{' '}
+          <Link to="/menu" className="font-semibold text-heaven-rose underline decoration-heaven-mist underline-offset-4 hover:decoration-heaven-rose/40">
+            menu page
+          </Link>
+          . See real bakes in the{' '}
           <Link to="/gallery" className="font-semibold text-heaven-rose underline decoration-heaven-mist underline-offset-4 hover:decoration-heaven-rose/40">
             gallery
           </Link>
