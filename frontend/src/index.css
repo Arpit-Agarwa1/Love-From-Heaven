@@ -17,6 +17,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* High-DPI `brand-logo.png` downscales cleanly in the UI */
+img.brand-logo-img {
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
 ::selection {
   @apply bg-heaven-rose/35 text-heaven-cocoa;
 }

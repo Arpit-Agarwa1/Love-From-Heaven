@@ -26,7 +26,7 @@ export function BrandLogo({ className = '', loading = 'lazy', alt = '', ...rest 
       alt={alt}
       loading={loading}
       decoding="async"
-      className={className}
+      className={['brand-logo-img', className].filter(Boolean).join(' ')}
       onError={() =>
         setIndex((i) => (i < LOGO_SOURCES.length - 1 ? i + 1 : i))
       }
