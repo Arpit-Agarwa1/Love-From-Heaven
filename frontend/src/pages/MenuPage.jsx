@@ -6,10 +6,6 @@ const MENU_PDF = '/menu-2026-love-from-heaven.pdf';
 /** Full 2026 menu (PDF from brand files): in-page viewer plus download / new-tab links. */
 export function MenuPage() {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     const previous = document.title;
     document.title = 'Menu 2026 | Love From Heaven';
     return () => {
@@ -24,7 +20,7 @@ export function MenuPage() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse 70% 45% at 50% -15%, rgba(241, 162, 187, 0.28), transparent), radial-gradient(ellipse 50% 35% at 100% 40%, rgba(201, 162, 39, 0.08), transparent)',
+            'radial-gradient(ellipse 70% 45% at 50% -15%, rgba(202, 100, 144, 0.28), transparent), radial-gradient(ellipse 50% 35% at 100% 40%, rgba(201, 162, 39, 0.08), transparent)',
         }}
       />
       <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
@@ -43,7 +39,7 @@ export function MenuPage() {
           <a
             href={MENU_PDF}
             download="Menu-2026-Love-From-Heaven.pdf"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-heaven-rose px-6 py-2.5 text-sm font-semibold text-heaven-cocoa shadow-sm transition hover:bg-heaven-cocoa hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-cocoa"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-heaven-rose px-6 py-2.5 text-sm font-semibold text-heaven-cocoa shadow-soft transition duration-200 ease-out hover:bg-heaven-cocoa hover:text-white hover:shadow-soft-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-cocoa"
           >
             Download PDF
           </a>
@@ -51,7 +47,7 @@ export function MenuPage() {
             href={MENU_PDF}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-heaven-cocoa/15 bg-white/80 px-6 py-2.5 text-sm font-semibold text-heaven-cocoa transition hover:border-heaven-gold/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-heaven-cocoa/12 bg-white/90 px-6 py-2.5 text-sm font-semibold text-heaven-cocoa shadow-soft transition duration-200 ease-out hover:border-heaven-gold/40 hover:shadow-soft-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose"
           >
             Open PDF in new tab
           </a>
@@ -63,7 +59,7 @@ export function MenuPage() {
           </Link>
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-2xl border border-heaven-mist bg-white shadow-sm">
+        <div className="mt-10 overflow-hidden rounded-2xl border border-heaven-mist/90 bg-white shadow-soft-lg">
           <iframe
             title="Love From Heaven menu 2026 PDF"
             src={`${MENU_PDF}#view=FitH`}

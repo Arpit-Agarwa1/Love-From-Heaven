@@ -9,13 +9,13 @@ import {
 export function GalleryTeaser() {
   return (
     <section
-      className="border-b border-heaven-mist bg-gradient-to-b from-heaven-cream via-white/60 to-heaven-cream"
+      className="border-b border-heaven-mist/80 bg-gradient-to-b from-heaven-cream via-white/70 to-heaven-blush/25"
       aria-labelledby="gallery-teaser-heading"
     >
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-heaven-rose">From the kitchen</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-heaven-rose">From the kitchen</p>
             <h2 id="gallery-teaser-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight text-heaven-cocoa sm:text-4xl">
               Cookies &amp; biscuits
             </h2>
@@ -34,7 +34,7 @@ export function GalleryTeaser() {
           </div>
           <Link
             to="/gallery"
-            className="inline-flex min-h-[44px] shrink-0 items-center justify-center self-start rounded-full border border-heaven-cocoa/12 bg-white px-6 py-2.5 text-sm font-semibold text-heaven-cocoa shadow-sm transition hover:border-heaven-gold/45 hover:bg-heaven-blush/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:self-auto"
+            className="inline-flex min-h-[44px] shrink-0 items-center justify-center self-start rounded-full border border-heaven-cocoa/10 bg-white px-6 py-2.5 text-sm font-semibold text-heaven-cocoa shadow-soft transition duration-200 ease-out hover:border-heaven-gold/40 hover:bg-heaven-blush/35 hover:shadow-soft-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:self-auto"
           >
             View full gallery
           </Link>
@@ -42,7 +42,7 @@ export function GalleryTeaser() {
 
         <ul className="mt-10 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-4 sm:gap-4">
           {GALLERY_HOME_PREVIEW_IDS.map((id) => (
-            <li key={id} className="overflow-hidden rounded-2xl border border-heaven-mist/90 bg-heaven-blush/20 shadow-sm ring-1 ring-heaven-cocoa/[0.04]">
+            <li key={id} className="overflow-hidden rounded-2xl border border-heaven-mist/80 bg-white/60 shadow-soft ring-1 ring-heaven-cocoa/[0.04] transition duration-300 ease-out hover:shadow-soft-lg">
               <Link to="/gallery" className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose">
                 <div className="relative aspect-square overflow-hidden bg-heaven-mist/40">
                   <img

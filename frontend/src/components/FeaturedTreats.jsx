@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
  */
 function TreatCardSkeleton() {
   return (
-    <li className="flex flex-col rounded-2xl border border-heaven-mist bg-white/60 p-6 shadow-sm">
+    <li className="flex flex-col rounded-2xl border border-heaven-mist/90 bg-white/70 p-6 shadow-soft">
       <div className="h-6 w-3/5 animate-pulse rounded bg-heaven-mist" />
       <div className="mt-3 space-y-2 flex-1">
         <div className="h-3 w-full animate-pulse rounded bg-heaven-mist/90" />
@@ -25,8 +25,10 @@ export function FeaturedTreats({ items, loading, error }) {
   return (
     <section id="treats" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-heaven-rose">Signature offerings</p>
-        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-heaven-cocoa sm:text-4xl">Featured menu</h2>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-heaven-rose">Signature offerings</p>
+        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-heaven-cocoa sm:text-4xl">
+          Featured menu
+        </h2>
         <p className="mt-4 text-base leading-relaxed text-heaven-cocoa/68">
           A curated selection of customer favorites. For the full <strong className="font-semibold text-heaven-cocoa/80">2026 menu</strong>, see the{' '}
           <Link to="/menu" className="font-semibold text-heaven-rose underline decoration-heaven-mist underline-offset-4 hover:decoration-heaven-rose/40">
@@ -54,7 +56,7 @@ export function FeaturedTreats({ items, loading, error }) {
 
       {error && !loading && (
         <div
-          className="mt-10 rounded-xl border border-heaven-rose/25 bg-white/60 px-5 py-4 shadow-sm backdrop-blur-sm"
+          className="mt-10 rounded-2xl border border-heaven-rose/20 bg-white/75 px-5 py-4 shadow-soft backdrop-blur-sm"
           role="alert"
         >
           <p className="text-sm font-semibold text-heaven-cocoa">Unable to load the menu</p>
@@ -71,7 +73,7 @@ export function FeaturedTreats({ items, loading, error }) {
           {items.map((item) => (
             <li
               key={item.id}
-              className="group flex flex-col rounded-2xl border border-heaven-mist bg-white/75 p-6 shadow-sm ring-0 transition hover:border-heaven-gold/35 hover:shadow-md"
+              className="group flex flex-col rounded-2xl border border-heaven-mist/90 bg-white/85 p-6 shadow-soft ring-0 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-heaven-gold/30 hover:shadow-soft-lg"
             >
               <h3 className="font-display text-xl font-semibold tracking-tight text-heaven-cocoa">{item.name}</h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-heaven-cocoa/68">{item.description}</p>

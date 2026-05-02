@@ -20,10 +20,16 @@ export function Header() {
   }, [menuOpen]);
 
   const linkClass =
-    'text-sm font-medium text-heaven-cocoa/85 transition-colors hover:text-heaven-rose focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose rounded-sm';
+    'text-[13px] font-semibold tracking-wide text-heaven-cocoa/80 transition-colors duration-200 ease-out hover:text-heaven-cocoa focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose rounded-full';
 
   const pageNavLinkClass = ({ isActive }) =>
-    [linkClass, isActive ? 'text-heaven-rose' : ''].filter(Boolean).join(' ');
+    [
+      linkClass,
+      'px-3.5 py-2',
+      isActive
+        ? 'bg-heaven-cocoa/[0.07] text-heaven-cocoa shadow-soft ring-1 ring-heaven-mist/90'
+        : 'text-heaven-cocoa/75 hover:bg-heaven-cocoa/[0.04] hover:text-heaven-cocoa',
+    ].join(' ');
 
   const navItems = (
     <>
@@ -32,7 +38,7 @@ export function Header() {
       </NavLink>
       <Link
         to={{ pathname: '/', hash: 'order' }}
-        className={linkClass}
+        className={`${linkClass} px-3.5 py-2`}
         onClick={() => setMenuOpen(false)}
       >
         Order
@@ -50,12 +56,12 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-heaven-mist/80 bg-heaven-cream/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-4 py-4 sm:gap-6 sm:px-6 sm:py-4 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-heaven-mist/70 bg-heaven-cream/90 shadow-header backdrop-blur-xl supports-[backdrop-filter]:bg-heaven-cream/80">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-4 py-3.5 sm:gap-6 sm:px-6 sm:py-4 lg:px-8">
         <Link
           to="/"
           aria-label="Love From Heaven home bakery — home"
-          className="group flex shrink-0 items-center justify-center rounded-full bg-white p-2 shadow-[0_1px_2px_rgba(61,50,41,0.06),0_6px_16px_-4px_rgba(61,50,41,0.08)] ring-1 ring-heaven-cocoa/[0.08] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgba(61,50,41,0.08),0_10px_24px_-6px_rgba(61,50,41,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:p-2.5"
+          className="group flex shrink-0 items-center justify-center rounded-full bg-white p-2 shadow-soft ring-1 ring-heaven-cocoa/[0.07] transition-shadow duration-200 ease-out hover:shadow-soft-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:p-2.5"
         >
           <BrandLogo
             className="h-14 w-14 object-contain sm:h-16 sm:w-16 lg:h-[4.5rem] lg:w-[4.5rem]"
@@ -64,13 +70,13 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:gap-10 sm:flex" aria-label="Main">
+        <nav className="hidden items-center gap-1 sm:flex lg:gap-1" aria-label="Main">
           {navItems}
         </nav>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-heaven-mist bg-white/90 text-heaven-cocoa shadow-sm transition hover:border-heaven-cocoa/12 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:hidden"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-heaven-mist/90 bg-white/95 text-heaven-cocoa shadow-soft transition hover:border-heaven-cocoa/15 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-heaven-rose sm:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}

@@ -53,6 +53,14 @@ export function HomePage() {
     return () => cancelAnimationFrame(frame);
   }, [location.pathname, location.hash]);
 
+  useEffect(() => {
+    const previous = document.title;
+    document.title = 'Love From Heaven | Artisan home bakery';
+    return () => {
+      document.title = previous;
+    };
+  }, []);
+
   return (
     <>
       <Hero />
